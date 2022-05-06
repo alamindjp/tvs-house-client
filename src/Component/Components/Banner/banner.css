@@ -1,0 +1,26 @@
+.banner {
+    background-image: url(./../../../images/tvs.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.banner-footer {
+    position: absolute;
+    bottom: 0;
+    right: 40%;
+    left: 40%;
+}
+
+@media only screen and (max-width: 600px) {
+    .banner-footer {
+        right: 10%;
+        left: 10%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .banner-footer {
+        right: 20%;
+        left: 20%;
+    }
+}
