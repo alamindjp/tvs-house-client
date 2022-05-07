@@ -13,36 +13,36 @@ const Features = () => {
                 <div className="col-12 col-md-4">
 
                     <h4>Key Specification of Zeppelin R STD</h4>
-                    <table class="table table-striped border">
+                    <table className="table table-striped border">
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td colspan="2">Motor Power</td>
+                                <td colSpan="2">Motor Power</td>
                                 <td>1200 W</td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td colspan="2">Battery Type</td>
+                                <td colSpan="2">Battery Type</td>
                                 <td>Li-ION</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
-                                <td colspan="2">Fuel Type</td>
+                                <td colSpan="2">Fuel Type</td>
                                 <td>Electric</td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
-                                <td colspan="2">ABS</td>
+                                <td colSpan="2">ABS</td>
                                 <td>Dual Channel</td>
                             </tr>
                             <tr>
                                 <th scope="row">5</th>
-                                <td colspan="2">Wheels Type</td>
+                                <td colSpan="2">Wheels Type</td>
                                 <td>Spoke</td>
                             </tr>
                             <tr>
                                 <th scope="row">6</th>
-                                <td colspan="2">Tyre Type</td>
+                                <td colSpan="2">Tyre Type</td>
                                 <td>Tubeless</td>
                             </tr>
                         </tbody>
