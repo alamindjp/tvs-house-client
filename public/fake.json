@@ -1,49 +1,60 @@
 [
+  
+  
+  
+  
+  
     {
       "_id": "627566330db1dbbc71a24671",
-      "name": "Ernestine Melton",
-      "image": "https://i.ibb.co/JsbpwR6/tvs-apache-4v-160.png",
-      "price": "750",
+      "name": "TVS APACHE RR ",
+      "image": "https://i.ibb.co/QY2b7jY/tvs-apache-rr-310.png",
+      "price": "2845",
+      "quantity": "70",
       "supplier": "Md. Alamin Hossain",
       "about": "Officia consequat pariatur velit sit commodo aliqua ex consectetur laborum laboris deserunt. Enim nulla enim sit fugiat eu in exercitation. Aliquip velit commodo quis eu mollit adipisicing. Duis veniam aute culpa esse eu magna. Laboris exercitation quis amet excepteur id laborum consequat sit laborum commodo minim. Labore consequat tempor et ad consectetur sunt elit irure sint.\r\n"
     },
     {
       "_id": "627566330db1dbbc71a24672",
-      "name": "Ernestine Melton",
-      "image": "https://i.ibb.co/QY2b7jY/tvs-apache-rr-310.png",
-      "price": "750",
+      "name": "TVS APACHE 4V",
+      "image": "https://i.ibb.co/JsbpwR6/tvs-apache-4v-160.png",
+      "price": "2,203",
+      "quantity": "80",
       "supplier": "Md. Alamin Hossain",
       "about": "Officia consequat pariatur velit sit commodo aliqua ex consectetur laborum laboris deserunt. Enim nulla enim sit fugiat eu in exercitation. Aliquip velit commodo quis eu mollit adipisicing. Duis veniam aute culpa esse eu magna. Laboris exercitation quis amet excepteur id laborum consequat sit laborum commodo minim. Labore consequat tempor et ad consectetur sunt elit irure sint.\r\n"
     },
     {
       "_id": "627566330db1dbbc71a24673",
-      "name": "Ernestine Melton",
+      "name": "TVS APACHE RTR",
       "image": "https://i.ibb.co/85vJdbs/tvs-apache-rtr-160.png",
-      "price": "750",
+      "price": "1,760",
+      "quantity": "100",
       "supplier": "Md. Alamin Hossain",
       "about": "Officia consequat pariatur velit sit commodo aliqua ex consectetur laborum laboris deserunt. Enim nulla enim sit fugiat eu in exercitation. Aliquip velit commodo quis eu mollit adipisicing. Duis veniam aute culpa esse eu magna. Laboris exercitation quis amet excepteur id laborum consequat sit laborum commodo minim. Labore consequat tempor et ad consectetur sunt elit irure sint.\r\n"
     },
     {
       "_id": "627566330db1dbbc71a24674",
-      "name": "Ernestine Melton",
+      "name": "TVS RAIDER",
       "image": "https://i.ibb.co/jw5fGzQ/tvs-raider.png",
-      "price": "750",
+      "price": "1050",
+      "quantity": "150",
       "supplier": "Md. Alamin Hossain",
       "about": "Officia consequat pariatur velit sit commodo aliqua ex consectetur laborum laboris deserunt. Enim nulla enim sit fugiat eu in exercitation. Aliquip velit commodo quis eu mollit adipisicing. Duis veniam aute culpa esse eu magna. Laboris exercitation quis amet excepteur id laborum consequat sit laborum commodo minim. Labore consequat tempor et ad consectetur sunt elit irure sint.\r\n"
     },
     {
       "_id": "627566330db1dbbc71a24675",
-      "name": "Ernestine Melton",
-      "image": "https://i.ibb.co/mcPfq7J/tvs-victor.png",
-      "price": "750",
+      "name": "TVS STRYKER",
+      "image": "https://i.ibb.co/pR5rDw3/tvs-stryker.png",
+      "price": "1000",
+      "quantity": "100",
       "supplier": "Md. Alamin Hossain",
       "about": "Officia consequat pariatur velit sit commodo aliqua ex consectetur laborum laboris deserunt. Enim nulla enim sit fugiat eu in exercitation. Aliquip velit commodo quis eu mollit adipisicing. Duis veniam aute culpa esse eu magna. Laboris exercitation quis amet excepteur id laborum consequat sit laborum commodo minim. Labore consequat tempor et ad consectetur sunt elit irure sint.\r\n"
     },
     {
       "_id": "627566330db1dbbc71a24676",
-      "name": "Ernestine Melton",
-      "image": "https://i.ibb.co/pR5rDw3/tvs-stryker.png",
-      "price": "750",
+      "name": "TVS VICTOR",
+      "image": "https://i.ibb.co/mcPfq7J/tvs-victor.png",
+      "price": "950",
+      "quantity": "50",
       "supplier": "Md. Alamin Hossain",
       "about": "Officia consequat pariatur velit sit commodo aliqua ex consectetur laborum laboris deserunt. Enim nulla enim sit fugiat eu in exercitation. Aliquip velit commodo quis eu mollit adipisicing. Duis veniam aute culpa esse eu magna. Laboris exercitation quis amet excepteur id laborum consequat sit laborum commodo minim. Labore consequat tempor et ad consectetur sunt elit irure sint.\r\n"
     }

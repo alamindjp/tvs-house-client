@@ -5,12 +5,13 @@ import Product from '../../Components/product/Product';
 const Inventory = () => {
     const [collections] = useCollection([])
     return (
-        <div>
-             <div className='container'>
-                <h3>Total Collection {collections.length}</h3>
+        <div className="mt-5">
+            <div className='container'>
+                <h3>Total Inventory: {collections.length}</h3>
+                <hr className='w-25 mx-auto m-1 p-1 rounded-circle' />
                 <div className="row d-flex">
                     {
-                        collections.map(product => <Product
+                        collections.slice(0, 6).map(product => <Product
                             key={product._id}
                             product={product}
                         ></Product>)

@@ -13,7 +13,7 @@ const Header = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/">Home</NavLink>
-                        <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/inventory">Inventory</NavLink>
+                        
                         <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/blogs">Blogs</NavLink>
                         <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/about">About</NavLink>
 
