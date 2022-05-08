@@ -14,7 +14,7 @@ const Header = () => {
         <header className='sticky-top'>
             <nav className="navbar navbar-expand-md navbar-dark bg-primary">
                 <div className="container">
-                    <Link className="navbar-brand" to="/"><img className='img-fluid w-75' src="logo.png" alt="" /></Link>
+                    <Link className="navbar-brand" to="/"><img className='img-fluid w-50' src="logo.png" alt="" /></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

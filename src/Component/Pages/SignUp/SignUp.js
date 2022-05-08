@@ -1,33 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Loading from '../../Components/SharedPage/Loading/Loading';
+import SocialLogIn from '../LogIn/SocialLogIn/SocialLogIn';
 
 const SignUp = () => {
-const navigate = useNavigate('')
-const location = useLocation()
+    const [agree, setAgree] = useState(false)
+    const navigate = useNavigate('')
+    const location = useLocation()
 
-let from = location.state?.from?.pathname || "/"
+    let from = location.state?.from?.pathname || "/"
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const handleSignUp = event => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        createUserWithEmailAndPassword(email, password)
+        if (agree) {
+            createUserWithEmailAndPassword(email, password)
+        }
     }
-    if (loading){
-            return <p>Loading...</p>;
+    if (loading) {
+        return <Loading></Loading>
     }
-    if (error){
+    if (error) {
         alert(error)
     }
-    if (user){
+    if (user) {
         navigate(from, { replace: true })
     }
     return (
@@ -43,15 +48,16 @@ let from = location.state?.from?.pathname || "/"
                 </div>
                 <div>
                     <div className="form-check my-3 text-start">
-                        <input className="form-check-input" type="checkbox" value="" id="invalidCheck2" required />
+                        <input onClick={() => setAgree(!agree)} className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
                         <label className="form-check-label">Agree to terms and conditions</label>
                     </div>
                 </div>
-                <p>Have an account?<Link to="/login" className='text-primary text-decoration-none'> Please login</Link></p>
                 <div>
-                    <button className="btn btn-primary" type="submit">Sign Up</button>
+                    <button className="btn btn-primary my-2" type="submit" disabled={!agree}>Sign Up</button>
                 </div>
             </form>
+            <p className='mt-2'>Have an account?<Link to="/login" className='text-primary text-decoration-none '> Please login</Link></p>
+            <SocialLogIn></SocialLogIn>
         </div>
     );
 };
