@@ -1,13 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const SignUp = () => {
+const navigate = useNavigate('')
+const location = useLocation()
+
+let from = location.state?.from?.pathname || "/"
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
     const handleSignUp = event => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(name, email, password)
+        createUserWithEmailAndPassword(email, password)
+    }
+    if (loading){
+            return <p>Loading...</p>;
+    }
+    if (error){
+        alert(error)
+    }
+    if (user){
+        navigate(from, { replace: true })
     }
     return (
         <div className='container w-50 login-container'>

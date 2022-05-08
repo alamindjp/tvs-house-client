@@ -7,6 +7,7 @@ import About from './Component/Pages/About/About';
 import Blogs from './Component/Pages/Blogs/Blogs';
 import Home from './Component/Pages/Home/Home';
 import LogIn from './Component/Pages/LogIn/LogIn';
+import RequireAuth from './Component/Pages/LogIn/RequireAuth/RequireAuth';
 import ManageProduct from './Component/Pages/ManageProduct/ManageProduct';
 import SignUp from './Component/Pages/SignUp/SignUp';
 
@@ -21,7 +22,11 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<LogIn></LogIn>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
-        <Route path='/product/:productId' element={<ManageProduct></ManageProduct>}></Route>
+        <Route path='/product/:productId' element={
+          <RequireAuth>
+            <ManageProduct></ManageProduct>
+          </RequireAuth>
+        }></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
