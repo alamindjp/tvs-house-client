@@ -8,6 +8,7 @@ import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import Loading from '../../Components/SharedPage/Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PageTitle from '../../Components/PageTitle/PageTitle';
 
 
 const LogIn = () => {
@@ -59,6 +60,7 @@ const LogIn = () => {
 
     return (
         <div className='container w-50 login-container'>
+            <PageTitle title='Login'></PageTitle>
             <h1 className="text-info m-2">Please Login</h1>
             <form onSubmit={handleSubmit}>
                 <div>

@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Blogs = () => {
     return (
         <div className='w-75 mx-auto custom-text'>
+            <Helmet>
+                <title>Blogs - tvs house</title>
+            </Helmet>
             <h4 className='mt-5'>Q 1. Difference between javascript and nodejs.</h4>
             <p><span className='fs-5 fw-bolder'>Ans:</span> <span className='fw-bolder'>Javascript</span> is a programming language that is used for writing scripts on the website. And<br /><span className='fw-bolder'> NodeJS</span> is a Javascript runtime environment. </p>
             <h4 className='mt-5'>Q 2. When should you use nodejs and when should you use mongodb?</h4>

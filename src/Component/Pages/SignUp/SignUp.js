@@ -4,6 +4,7 @@ import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import Loading from '../../Components/SharedPage/Loading/Loading';
 import SocialLogIn from '../LogIn/SocialLogIn/SocialLogIn';
+import PageTitle from '../../Components/PageTitle/PageTitle';
 
 const SignUp = () => {
     const [agree, setAgree] = useState(false)
@@ -19,7 +20,6 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const handleSignUp = event => {
         event.preventDefault();
-        const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         if (agree) {
@@ -35,8 +35,10 @@ const SignUp = () => {
     if (user) {
         navigate(from, { replace: true })
     }
+    
     return (
         <div className='container w-50 login-container'>
+            <PageTitle title="Signup"></PageTitle>
             <h1 className="text-info m-2">Please SignUp</h1>
             <form onSubmit={handleSignUp}>
                 <div>
