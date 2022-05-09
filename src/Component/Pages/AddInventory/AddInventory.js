@@ -13,7 +13,7 @@ const handleAddProduct=event =>{
     
     const user = {name,image,price,quantity,supplier,about}
 
-    fetch('http://localhost:5000/addProduct',{
+    fetch('https://glacial-castle-51948.herokuapp.com/addProduct',{
         method: 'POST',
         headers: {
             'content-type' : 'application/json'

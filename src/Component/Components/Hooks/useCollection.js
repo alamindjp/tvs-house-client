@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const useCollection = () => {
     const[collections, setCollections]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/product')
+        fetch('https://glacial-castle-51948.herokuapp.com/product')
         .then(res=>res.json())
         .then(data=>setCollections(data))
     },[])
