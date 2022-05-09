@@ -1,42 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import PageTitle from '../../Components/PageTitle/PageTitle';
+import React from 'react';
+import useCollection from '../../Components/Hooks/useCollection';
 
 const ManageProduct = () => {
-    const { productId } = useParams()
-    const [product, setProduct] = useState({});
-    useEffect(() => {
-        const url = `http://localhost:5000/product/${productId}`
-        fetch(url).then(res => res.json()).then(data => setProduct(data))
-    }, [])
+    const [collections, setCollections] = useCollection()
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are You Sure?')
+        if (proceed) {
+            const url = `http://localhost:5000/product/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    const remaining = collections.filter(collection => collection._id !== id);
+                    setCollections(remaining)
+                })
+        }
+    }
     return (
-        <div>
-            <PageTitle title='Manage-product'></PageTitle>
-            <h2 className='mb-3'>Manage Product</h2>
-            <hr className='w-50 mx-auto m-1 p-1 rounded' />
-            <h3 className='mt-5'>{product.name}</h3>
-            <hr className='w-25 mx-auto m-1 p-1 rounded-circle' />
-            <div className="row row-cols-1 row-cols-md-2">
-                <div className="col mx-auto">
-                    <div className="card border-0">
-                        <img src={product.image} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">Supplier: {product.supplier}</h5>
-                            <p className="card-text"><span className='fw-bold'>Quantity</span> : {product.quantity}</p>
-                            <p className="card-text"><span className='fw-bold'>Price</span> : ${product.price}</p>
-                            <p className="card-text custom-text"><span className='fw-bolder text-decoration-underline'>Description</span> : {product.about ? product.about : "No description"}</p>
-                            <div className='d-flex justify-content-center mt-4'>
-                                <button className='btn btn-outline-success me-4 w-25'>Delivery</button>
-                                <div className="input-group w-25">
-                                    <input type="number" className="form-control" placeholder="Add Quantity" aria-label="Recipient's username" aria-describedby="basic-addon" />
-                                    <span className="input-group-text" id="basic-addon">Add</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <Link to='/inventories' type="button" className="btn btn-outline-secondary mt-2">All Inventory</Link>
+        <div className='w-50 mx-auto mt-5'>
+            <h2 className='mb-4'>Total Inventory: {collections.length}</h2>
+            {
+                collections.map(collection => <div key={collection._id}>
+                    <h5 className='m-0 border py-2'><img width={50} src={collection.image} className="me-3" alt="" />{collection.name} <button onClick={() => handleDelete(collection._id)} className="btn-danger ms-3">X</button></h5>
+                </div>)
+            }
         </div>
     );
 };
