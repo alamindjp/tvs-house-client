@@ -35,7 +35,7 @@ const SignUp = () => {
     if (user) {
         navigate(from, { replace: true })
     }
-    
+
     return (
         <div className='container w-50 login-container'>
             <PageTitle title="Signup"></PageTitle>

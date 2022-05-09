@@ -22,9 +22,7 @@ const LogIn = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
-        auth
-    );
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -33,18 +31,20 @@ const LogIn = () => {
         return <Loading></Loading>
     }
     if (error) {
-        error(error)
+        toast('Please Enter valid Email')
     }
-
     if (user) {
         navigate(from, { replace: true })
+    }
+    if (sending) {
+        return <Loading></Loading>
     }
 
     const handleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password)
+        signInWithEmailAndPassword(email, password);
     }
 
     const resetPassword = async () => {
@@ -53,8 +53,8 @@ const LogIn = () => {
             await sendPasswordResetEmail(email)
             toast('Send Email')
         }
-        else{
-            toast('Please enter your email')
+        else {
+            toast('Please enter Valid Email')
         }
     }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import PageTitle from '../../Components/PageTitle/PageTitle';
 
 const AddInventory = () => {
@@ -21,7 +22,12 @@ const handleAddProduct=event =>{
         body: JSON.stringify(user)
     })
     .then(res => res.json())
-    .then(data=> ('success', data))
+    .then(data=>{
+        console.log('success', data);
+        toast('Added a New User successfully');
+        event.target.reset()
+        
+        })
 
 }
     return (

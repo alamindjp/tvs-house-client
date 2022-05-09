@@ -6,16 +6,17 @@ import auth from '../../../../firebase.init';
 import Loading from '../../../Components/SharedPage/Loading/Loading';
 
 const RequireAuth = ({ children }) => {
-    const [user, loading] = useAuthState(auth);
+    const [user, loading, error] = useAuthState(auth);
     const location = useLocation()
     const [sendEmailVerification] = useSendEmailVerification(auth);
-    if (loading) {
-        return <Loading></Loading>
+
+    if (error) {
+        return toast(error?.message)
     }
     if (!user) {
-        return <Navigate to="/login" state={{ from: location }} replace />
+        return <Navigate to="/login" state={{ from: location }} replace></Navigate>
     }
-    if (user.providerData[0]?.providerId==='password' && !user.emailVerified) {
+    if (user.providerData[0]?.providerId === 'password' && !user.emailVerified) {
         return (
             <div>
                 <h4>Your Email is not verified</h4>
@@ -30,6 +31,9 @@ const RequireAuth = ({ children }) => {
                 <ToastContainer></ToastContainer>
             </div>
         )
+    }
+    if (loading) {
+        return <Loading></Loading>
     }
     return children;
 };

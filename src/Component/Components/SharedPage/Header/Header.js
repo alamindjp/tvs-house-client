@@ -7,9 +7,9 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [user] = useAuthState(auth)
-    const handleSignOut = ()=>{
+    const handleSignOut = () => {
         signOut(auth)
-      }
+    }
     return (
         <header className='sticky-top'>
             <nav className="navbar navbar-expand-md navbar-dark bg-primary">
@@ -24,9 +24,9 @@ const Header = () => {
                         <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/about">About</NavLink>
                         {
                             user && <>
-                            <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/manageProduct">Manage Items</NavLink>
-                            <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/addInventory">Add Item</NavLink>
-                            <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/myItems">My Items</NavLink>
+                                <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/manageProduct">Manage Items</NavLink>
+                                <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/addInventory">Add Item</NavLink>
+                                <NavLink className={({ isActive }) => (isActive ? "active-link" : "link")} to="/myItems">My Items</NavLink>
                             </>
                         }
                         {

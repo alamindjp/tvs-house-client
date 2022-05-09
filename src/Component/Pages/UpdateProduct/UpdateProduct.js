@@ -9,6 +9,7 @@ const UpdateProduct = () => {
         const url = `https://glacial-castle-51948.herokuapp.com/product/${productId}`
         fetch(url).then(res => res.json()).then(data => setProduct(data))
     }, [])
+
     return (
         <div>
             <PageTitle title='Manage-product'></PageTitle>
@@ -27,10 +28,10 @@ const UpdateProduct = () => {
                             <p className="card-text custom-text"><span className='fw-bolder text-decoration-underline'>Description</span> : {product.about ? product.about : "No description"}</p>
                             <div className='d-flex justify-content-center mt-4'>
                                 <button className='btn btn-outline-success me-4 w-25'>Delivery</button>
-                                <div className="input-group w-25">
-                                    <input type="number" className="form-control" placeholder="Add Quantity" aria-label="Recipient's username" aria-describedby="basic-addon" />
-                                    <span className="input-group-text" id="basic-addon">Add</span>
-                                </div>
+                                <form className="input-group w-25">
+                                    <input type="number" name='quantity' className="form-control" placeholder="Add Quantity" aria-label="Recipient's username" aria-describedby="basic-addon" />
+                                    <input type="submit" value="Add" className="input-group-text" id="basic-addon" />
+                                </form>
                             </div>
                         </div>
                     </div>
