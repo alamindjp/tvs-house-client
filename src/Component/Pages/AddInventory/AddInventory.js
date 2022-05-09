@@ -21,7 +21,7 @@ const handleAddProduct=event =>{
         body: JSON.stringify(user)
     })
     .then(res => res.json())
-    .then(data=>console.log('success', data))
+    .then(data=> ('success', data))
 
 }
     return (
